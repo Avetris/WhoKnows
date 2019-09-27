@@ -1,3 +1,47 @@
 <resources>
     <string name="app_name">Who Knows</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="settings">Settings</string>
+
+
+    <string name="normal_game">Normal Game</string>
+    <string name="accumulative_game">Accumulative Game</string>
+    <string name="inverse_game">Inverse Game</string>
+    <string name="inverse_accumulative_game">Inverse Accumulative Game</string>
+
+
+    <string name="remove_ads">Remove ads for 2 hours</string>
+    <string name="language">Language</string>
+
+    <string-array name="languages_available">
+        <item>English</item>
+        <item>Spanish</item>
+    </string-array>
+
+    <string-array name="en_card_list">
+        <item>Picas</item>
+        <item>Corazores</item>
+        <item>Rombos</item>
+        <item>Tréboles</item>
+    </string-array>
+
+    <string name="question_pair_odd">Pair || Odd</string>
+    <string name="question_greater">Greater or Equal to %1$s || Smaller than %1$s</string>
+    <string name="question_smaller">Smaller or Equal to %1$s || Greater than %1$s</string>
+    <string name="question_equal">Same Number|| Different Number</string>
+    <string name="question_greater_num">Greater or Equal to %1$s || Smaller than %1$s</string>
+    <string name="question_smaller_num">Smaller or Equal to %1$s || Greater than %1$s</string>
+    <string name="question_equal_num">Equal to %1$s || Not Equal to %1$s</string>
+    <string name="question_multiple">Multiple of %1$s || Not Multiple of %1$s</string>
+    <string name="question_divisible">Divisible by %1$s || Not Divisible by %1$s</string>
+    <string name="question_court">Court Card || Not Court Card</string>
+    <string name="question_two_suits">%1$s or %2$s</string>
+    <string name="question_four_suits">%1$s, %2$s or %3$s || %4$s</string>
+
+    <string name="admods_id" translatable="false">ca-app-pub-4136978037886351~7509816013</string>
+    <string name="admods_banner" translatable="false">ca-app-pub-4136978037886351/3925794222</string>
+    <string name="admods_intersticial" translatable="false">ca-app-pub-4136978037886351/3359173234</string>
+    <string name="admods_rewarded" translatable="false">ca-app-pub-4136978037886351/3686476292</string>
 </resources>
