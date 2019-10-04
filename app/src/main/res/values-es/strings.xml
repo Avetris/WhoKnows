@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="accumulative_game">Acumulativo</string>
+    <string name="back_to_menu">Volver al menú</string>
+    <string name="cancel">Cancelar</string>
+    <string name="drink_1_shot">Beber un trago</string>
+    <string name="drink_x_shots">Beber %1$d tragos</string>
+    <string name="exit">Salir</string>
+    <string name="exit_sure">¿Estás seguro que quieres abandonar el juego?</string>
+    <string name="inverse_accumulative_game">Inverso Acumulativo</string>
+    <string name="inverse_game">Inverso</string>
+    <string name="language">Idioma</string>
+    <string name="next">Siguiente</string>
+    <string name="normal_game">Normal</string>
+    <string name="replay">Volver a jugar</string>
+    <string name="save">Guardar</string>
+    <string name="settings">Opciones</string>
+    <string name="shots">Tragos: %1$d</string>
+    <string name="random_card">Carta Aleatoria</string>
+    <string name="remove_ads">Eliminar anuncions durante 2 horas</string>
+    <string name="question_two_suits">%1$s o %2$s || %3$s o %4$s</string>
+    <string name="question_smaller_num">Menor o Igual a %1$s || Mayor a %1$s</string>
+    <string name="question_smaller">Menor o Igual || Mayor</string>
+    <string name="question_same_suits">Mismo Palo || Diferente Palo</string>
+    <string name="question_pair_odd">Par || Impar</string>
+    <string name="question_greater_num">Mayor o Igual a %1$s || Menor a %1$s</string>
+    <string name="question_greater">Mayor o Igual a || Menor</string>
+    <string name="question_four_suits">%1$s, %2$s o %3$s || %4$s</string>
+    <string name="question_equal_num">Igual a %1$s || Distinto de %1$s</string>
+    <string name="question_equal">Mismo Número || Número Diferente</string>
+    <string name="question_court">Figura || No Figura</string>
+
+    <string-array name="languages_available">
+        <item>Inglés</item>
+        <item>Español</item>
+    </string-array>
+</resources>

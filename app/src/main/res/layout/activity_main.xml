@@ -12,8 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_above="@id/adView"/>
-
+        android:layout_above="@id/adView"
+        android:layout_margin="16dp"/>
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/adView"
@@ -22,8 +22,6 @@
         android:layout_alignParentBottom="true"
         ads:adSize="SMART_BANNER"
         ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
-
-        <!--ads:adUnitId="@strings/admods_banner"-->
     </com.google.android.gms.ads.AdView>
 
 </RelativeLayout>

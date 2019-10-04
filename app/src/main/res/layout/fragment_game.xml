@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Fragments.GameFragment">
+
+    <TextView
+        android:id="@+id/tvAccumulator"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginBottom="15dp"/>
 
     <ImageView
         android:id="@+id/ivCurrentCard"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_above="@id/llButtons"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/ic_delete"
-        android:layout_margin="25dp"/>
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:src="@drawable/back"
+        android:adjustViewBounds="true"/>
 
     <LinearLayout
         android:id="@+id/llButtons"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
         android:orientation="horizontal"
-        android:layout_marginBottom="50dp"
         android:layout_marginTop="50dp">
 
         <Button
@@ -34,4 +43,4 @@
     </LinearLayout>
 
 
-</RelativeLayout>
+</LinearLayout>

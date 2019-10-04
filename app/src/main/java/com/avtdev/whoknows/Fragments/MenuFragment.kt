@@ -55,6 +55,7 @@ class MenuFragment : Fragment(), View.OnClickListener {
         view.findViewById<Button>(R.id.btnAccumulativeGame).setOnClickListener(this)
         view.findViewById<Button>(R.id.btnInverseGame).setOnClickListener(this)
         view.findViewById<Button>(R.id.btnInverseAccumulativeGame).setOnClickListener(this)
+        view.findViewById<Button>(R.id.btnRandomCard).setOnClickListener(this)
     }
 
     override fun onClick(p0: View?) {
@@ -64,6 +65,7 @@ class MenuFragment : Fragment(), View.OnClickListener {
             R.id.btnAccumulativeGame -> listener?.changeFragment(GameFragment.newInstance(Constants.Companion.GameType.ACCUMULATIVE))
             R.id.btnInverseGame -> listener?.changeFragment(GameFragment.newInstance(Constants.Companion.GameType.INVERSE))
             R.id.btnInverseAccumulativeGame -> listener?.changeFragment(GameFragment.newInstance(Constants.Companion.GameType.INVERSE_ACCUMULATIVE))
+            R.id.btnRandomCard -> listener?.changeFragment(GameFragment.newInstance(Constants.Companion.GameType.RANDOM_CARD))
         }
     }
 }

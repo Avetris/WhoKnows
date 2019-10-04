@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" height="245" width="180" viewBox="-.2 -236 180 245">
+<!-- SVG-cards 2.0.1								--><!-- This set of SVG files is a complete cards game with figures, numbers	--><!--	and backs of cards completely designed in SVG.				--><!--	Copyright (C) 2005 David Bellot						--><!--	This library is free software; you can redistribute it and/or		--><!--	modify it under the terms of the GNU Lesser General Public		--><!--	License as published by the Free Software Foundation; either		--><!--	version 2 of the License, or (at your option) any later version		--><!--	This library is distributed in the hope that it will be useful,		--><!--	but WITHOUT ANY WARRANTY; without even the implied warranty of		--><!--	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU	--><!--	Lesser General Public License for more details.				--><!--	You should have received a copy of the GNU Lesser General Public	--><!--	License along with this library; if not, write to the Free Software	--><!--	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA--><!--	Contact the author David Bellot at david.bellot@free.fr			-->
+<defs> 	
+  <g
+     id="n"
+     aria-label="5"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Bitstream Vera Serif';-inkscape-font-specification:'Bitstream Vera Serif Bold';letter-spacing:0px;word-spacing:0px;fill:#e6180a;fill-opacity:1;stroke:none">
+    <path
+       d="m 21.221723,-228.52797 v 4.77604 H 6.6566198 v 5.97916 q 1.203125,-0.92968 2.6796874,-1.40364 1.4765628,-0.47396 3.1171878,-0.47396 5.031249,0 7.947916,2.55208 2.916667,2.53386 2.916667,6.90886 0,4.44791 -2.916667,6.92708 -2.916667,2.47917 -8.166666,2.47917 -2.223959,0 -4.4296877,-0.36459 -2.1875,-0.36458 -4.5755207,-1.1302 v -5.94271 h 2.1874999 q 0.109375,2.67968 1.3854166,3.99218 1.2942708,1.3125 3.8098959,1.3125 2.679687,0 3.973958,-1.78645 1.294271,-1.80469 1.294271,-5.48698 0,-3.62761 -1.276042,-5.41406 -1.257812,-1.80469 -3.828125,-1.80469 -1.3854163,0 -2.4791662,0.58333 -1.0755208,0.56511 -2.0052083,1.76823 H 4.4691199 v -13.47135 z"
+       style="font-size:37.33333206px"/>
+  </g>
+ 	<g id="base"> 
+     <path style="fill:#FFFFFF;stroke:#000000;stroke-width:2.5" d="M 0,0C0,3.78 3.09,6.87 6.87,6.87L159.715,6.87C163.485,6.87 166.575,3.78 166.575,0L166.575,-228.4C166.575,-232.18 163.485,-235.27 159.715,-235.27L6.87,-235.27C3.09,-235.27 0,-232.18 0,-228.4L0,0 z"/>
+     </g>
+  <g id="figure" > 
+    <path style="fill:#E6180A;" d="M-7.67,3.93c0.01-4.71,5.91-8.14,7.64-11.87c1.75,3.72,7.66,7.12,7.7,11.83c0.01,2.22-1.71,4.03-3.82,4.03C1.73,7.92,0,6.13,0,3.91c0,2.23-1.71,4.03-3.82,4.03C-5.94,7.95-7.66,6.15-7.67,3.93z"/>
+ </g>
+  </defs>
+   <g x="0" y="0"> 
+    <g> 
+        <use xlink:href="#base" x="0" y="0"/>
+        <use xlink:href="#n" x="0" y="0"/>
+        <use xlink:href="#n" x="160" y="170" transform="rotate(180,163.575,-30.28)"/>
+        <use xlink:href="#figure" x="13.65" y="-185.117" transform="rotate(180,13.65,-185.117)"/> 
+        <use xlink:href="#figure" x="153.925" y="-44.28"/> 
+
+        <use xlink:href="#figure" x="20" y="-82.7125" transform="scale(2.4) rotate(180,20,-82.7125)"/> 
+        <use xlink:href="#figure" x="20" y="-14.599" transform="scale(2.4)"/> 
+        <use xlink:href="#figure" x="50" y="-82.7125" transform="scale(2.4) rotate(180,50,-82.7125)"/>
+        <use xlink:href="#figure" x="50" y="-14.599" transform="scale(2.4)"/> 
+        <use xlink:href="#figure" x="34" y="-50.6536" transform="scale(2.4) rotate(180,34,-50.6536)"/>
+    </g>  
+ </g>
+ </svg> 
+
+ <!--167.575-->
+ 

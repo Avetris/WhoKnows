@@ -9,6 +9,7 @@ import com.avtdev.whoknows.Activities.MainActivity
 import com.avtdev.whoknows.BuildConfig
 import com.avtdev.whoknows.R
 import com.avtdev.whoknows.Services.Constants
+import com.avtdev.whoknows.Services.LocaleHelper
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.rewarded.RewardItem
 import com.google.android.gms.ads.rewarded.RewardedAd
@@ -33,19 +34,30 @@ class SettingsDialog(context: Context) : Dialog(context) {
 
         val adapter = ArrayAdapter<String>(activity, android.R.layout.simple_spinner_item,
             activity.getResources().getStringArray(R.array.languages_available))
+
+        val shorts_lan = activity.getResources().getStringArray(R.array.languages_available_short)
+        val currentLan = LocaleHelper.getLanguage(activity)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         languageSpinner.adapter = adapter
+        val index = shorts_lan.indexOf(currentLan)
+        if(index > 0){
+            languageSpinner.setSelection(index)
+        }
 
         removeAds = dialogView.findViewById<Button>(R.id.btnRemoveAds)
 
         enableAdsButton(false)
         updateAdsTime()
 
-        builder.setPositiveButton(R.string.save){ dialog, which ->
-            activity.setPreferences(Constants.Companion.Preferences.LANGUAGE.name, languageSpinner.selectedItem)
+        builder.setPositiveButton(R.string.save){ dialog, _ ->
+            val lan : String = shorts_lan[languageSpinner.selectedItemPosition]
+
+            LocaleHelper.setLocale(activity, lan)
+            activity.recreate()
+
             dialog.dismiss()
         }
-        .setNegativeButton(R.string.cancel){ dialog, which ->
+        .setNegativeButton(R.string.cancel){ dialog, _ ->
             dialog.dismiss()
         }
 
@@ -98,7 +110,7 @@ class SettingsDialog(context: Context) : Dialog(context) {
     fun updateAdsTime(){
         if(activity.areAdsEnabled()){
             createRewardedAdd(false)
-            removeAds?.setOnClickListener{view->
+            removeAds?.setOnClickListener{_->
                 if (mRewardedAd.isLoaded()) {
                     enableAdsButton(false)
                     val adCallback = object : RewardedAdCallback(){

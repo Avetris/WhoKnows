@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" height="245" width="180" viewBox="-.2 -236 180 245">
+<!-- SVG-cards 2.0.1								--><!-- This set of SVG files is a complete cards game with figures, numbers	--><!--	and backs of cards completely designed in SVG.				--><!--	Copyright (C) 2005 David Bellot						--><!--	This library is free software; you can redistribute it and/or		--><!--	modify it under the terms of the GNU Lesser General Public		--><!--	License as published by the Free Software Foundation; either		--><!--	version 2 of the License, or (at your option) any later version		--><!--	This library is distributed in the hope that it will be useful,		--><!--	but WITHOUT ANY WARRANTY; without even the implied warranty of		--><!--	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU	--><!--	Lesser General Public License for more details.				--><!--	You should have received a copy of the GNU Lesser General Public	--><!--	License along with this library; if not, write to the Free Software	--><!--	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA--><!--	Contact the author David Bellot at david.bellot@free.fr			-->
+<defs> 	    
+    <g 
+       id="n"
+        aria-label="2"
+        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Bitstream Vera Serif';-inkscape-font-specification:'Bitstream Vera Serif Bold';letter-spacing:0px;word-spacing:0px;fill:#e6180a;fill-opacity:1;stroke:none">
+    <path
+       d="m 7.1188909,-220.90767 h -2.34375 v -6.28906 q 2.3828125,-0.72266 4.7070312,-1.07422 2.3437499,-0.37109 4.7265629,-0.37109 5.566406,0 8.671875,2.28515 3.125,2.26563 3.125,6.32813 0,2.89062 -1.71875,5.19531 -1.71875,2.28516 -6.5625,5.42969 l -8.1250004,5.33203 H 23.407953 v -3.4375 h 2.675782 v 8.55469 H 4.5212346 v -4.76563 l 4.3164063,-2.98828 q 5.5273441,-3.80859 7.3632811,-6.48438 1.835938,-2.67578 1.835938,-6.25 0,-3.3789 -1.40625,-5.13671 -1.386719,-1.77735 -4.0625,-1.77735 -2.304688,0 -3.6914066,1.40625 -1.3867188,1.38672 -1.7578125,4.04297 z"
+       style=""/>
+    </g>
+ 	<g id="base"> 
+     <path style="fill:#FFFFFF;stroke:#000000;stroke-width:2.5" d="M 0,0C0,3.78 3.09,6.87 6.87,6.87L159.715,6.87C163.485,6.87 166.575,3.78 166.575,0L166.575,-228.4C166.575,-232.18 163.485,-235.27 159.715,-235.27L6.87,-235.27C3.09,-235.27 0,-232.18 0,-228.4L0,0 z"/>
+     </g>
+    <g id="figure"> 
+     <path style="fill:#e6180a" d="M0,0C-2.56,0-5.12,0-7.68,0C -6.8053,0.039-6.061,0.605-5.358,1.0728C-3.779,2.264-2.3,3.63 -1.132,5.228C-0.587,6.032 -0.0144,6.936 0,7.94M-7.68,0C-6.57,-0.035 -5.622,-0.7413 -4.776,-1.393C-3.281,-2.648 -1.987,-4.141 -0.895,-5.757C-0.494,-6.426 -0.022,-7.135 0,-7.94C0,-5.293 0,-2.647 0,0M0,-7.94C0.038,-6.758 0.758,-5.734 1.438,-4.82C2.65,-3.310 4.086,-1.974 5.666,-0.857C6.28,-0.474 6.932,-0.0185 7.68,0C5.12,0 2.56,0 0,0M 7.68,0C6.57,0.035 5.622,0.741 4.776,1.392C 3.281,2.648 1.987,4.141 0.895,5.757C0.494,6.426 0.0225,7.135 0,7.94C0,5.293 0,2.647 0,0"/> 
+     </g>
+  </defs>
+   <g x="0" y="0"> 
+    <g> 
+        <use xlink:href="#base" x="0" y="0"/>
+        <use xlink:href="#n" x="0" y="0"/>
+        <use xlink:href="#n" x="160" y="170" transform="rotate(180,163.575,-30.28)"/>
+        <use xlink:href="#figure" x="13.65" y="-185.117" transform="rotate(180,13.65,-185.117)"/> 
+        <use xlink:href="#figure" x="153.925" y="-44.28"/> 
+        <use xlink:href="#figure" x="34" y="-14.599" transform="scale(2.4)"/> 
+        <use xlink:href="#figure" x="34" y="-82.7125" transform="scale(2.4) rotate(180,34,-82.7125)"/> 
+        </g>
+ </g>
+ </svg> 
+
+ <!--167.575-->

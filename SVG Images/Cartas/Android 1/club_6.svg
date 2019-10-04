@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" height="245" width="180" viewBox="-.2 -236 180 245">
+<!-- SVG-cards 2.0.1								--><!-- This set of SVG files is a complete cards game with figures, numbers	--><!--	and backs of cards completely designed in SVG.				--><!--	Copyright (C) 2005 David Bellot						--><!--	This library is free software; you can redistribute it and/or		--><!--	modify it under the terms of the GNU Lesser General Public		--><!--	License as published by the Free Software Foundation; either		--><!--	version 2 of the License, or (at your option) any later version		--><!--	This library is distributed in the hope that it will be useful,		--><!--	but WITHOUT ANY WARRANTY; without even the implied warranty of		--><!--	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU	--><!--	Lesser General Public License for more details.				--><!--	You should have received a copy of the GNU Lesser General Public	--><!--	License along with this library; if not, write to the Free Software	--><!--	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA--><!--	Contact the author David Bellot at david.bellot@free.fr			-->
+<defs> 	
+    <g
+        id="n"
+        aria-label="6"
+        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Bitstream Vera Serif';-inkscape-font-specification:'Bitstream Vera Serif Bold';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none">
+        <path
+        d="m 9.3545364,-217.44464 q 1.1848956,-0.94792 2.6432286,-1.42188 1.476563,-0.47395 3.208334,-0.47395 4.174479,0 6.54427,2.4427 2.388021,2.44271 2.388021,6.70834 0,4.5026 -2.679687,6.96354 -2.679688,2.44271 -7.619792,2.44271 -5.5781246,0 -8.4583328,-3.35417 -2.8619791,-3.3724 -2.8619791,-9.89844 0,-7.41927 3.1901041,-11.1927 3.190104,-3.79167 9.4609368,-3.79167 1.640625,0 3.518229,0.27344 1.877605,0.27343 4.028646,0.82031 v 4.8125 h -2.205729 q -0.455729,-1.85938 -1.731771,-2.80729 -1.257812,-0.96615 -3.26302,-0.96615 -3.244792,0 -4.703125,2.22396 -1.4401044,2.22396 -1.4583336,7.21875 z M 13.41964,-202.916 q 1.877605,0 2.679688,-1.58593 0.802083,-1.60417 0.802083,-5.54167 0,-3.9375 -0.802083,-5.52344 -0.802083,-1.60416 -2.679688,-1.60416 -1.877604,0 -2.679687,1.60416 -0.7838541,1.58594 -0.7838541,5.52344 0,3.9375 0.7838541,5.54167 0.802083,1.58593 2.679687,1.58593 z"
+        style="font-size:37.33333206px" />
+    </g>
+ 	<g id="base"> 
+     <path style="fill:#FFFFFF;stroke:#000000;stroke-width:2.5" d="M 0,0C0,3.78 3.09,6.87 6.87,6.87L159.715,6.87C163.485,6.87 166.575,3.78 166.575,0L166.575,-228.4C166.575,-232.18 163.485,-235.27 159.715,-235.27L6.87,-235.27C3.09,-235.27 0,-232.18 0,-228.4L0,0 z"/>
+     </g>
+ 	<g id="figure" > 	
+     <path 	d="M3.35,4.66c0-1.81-1.51-3.28-3.38-3.28s-3.38,1.47-3.38,3.28c0,1.81,1.51,3.28,3.38,3.28S3.35,6.47,3.35,4.66z"/>
+     <path d="M7.71-1.55c0-1.81-1.51-3.28-3.38-3.28S0.95-3.36,0.95-1.55c0,1.81,1.51,3.28,3.38,3.28S7.71,0.26,7.71-1.55z"/> 
+     <path 	d="M-0.95-1.57c0-0.66-0.2-1.28-0.55-1.8c-0.6-0.89-1.65-1.48-2.83-1.48c-1.87,0-3.38,1.47-3.38,3.28 	c0,1.81,1.51,3.28,3.38,3.28S-0.95,0.24-0.95-1.57z"/>
+     <path 	d="M3.94-7.94c-1.67,0-2.55,1.36-3.01,2.72C0.47-3.86,0.43-2.5,0.43-2.5h-0.86c0,0-0.16-5.43-3.5-5.44H3.94z"/>
+     <path 	d="M-2.32,2.25c1.9-1.9,1.9-4.75,1.9-4.75l0.85-0.01c0,0,0,2.91,1.85,4.76"/> 
+     <path 	d="M-1.94-3.85c1.9,1.9,4.75,1.9,4.75,1.9v0.85c0,0-2.91,0-4.76,1.85"/>
+     <path 	d="M1.87-3.86c-1.9,1.9-4.75,1.9-4.75,1.9v0.85c0,0,2.91,0,4.76,1.85"/> 
+     </g>
+  </defs>
+   <g x="0" y="0"> 
+    <g> 
+        <use xlink:href="#base" x="0" y="0"/>
+        <use xlink:href="#n" x="0" y="0"/>
+        <use xlink:href="#n" x="160" y="170" transform="rotate(180,163.575,-30.28)"/>
+        <use xlink:href="#figure" x="13.65" y="-185.117" transform="rotate(180,13.65,-185.117)"/> 
+        <use xlink:href="#figure" x="153.925" y="-44.28"/> 
+
+        <use xlink:href="#figure" x="20" y="-82.7125" transform="scale(2.4) rotate(180,20,-82.7125)"/> 
+        <use xlink:href="#figure" x="20" y="-14.599" transform="scale(2.4)"/> 
+        <use xlink:href="#figure" x="50" y="-82.7125" transform="scale(2.4) rotate(180,50,-82.7125)"/>
+        <use xlink:href="#figure" x="50" y="-14.599" transform="scale(2.4)"/> 
+        <use xlink:href="#figure" x="50" y="-50.6536" transform="scale(2.4) rotate(180,50,-50.6536)"/>
+        <use xlink:href="#figure" x="20" y="-50.6536" transform="scale(2.4) rotate(180,20,-50.6536)"/>
+    </g>  
+ </g>
+ </svg> 

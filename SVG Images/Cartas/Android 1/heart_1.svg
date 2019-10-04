@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" height="245" width="180" viewBox="-.2 -236 180 245">
+<!-- SVG-cards 2.0.1								--><!-- This set of SVG files is a complete cards game with figures, numbers	--><!--	and backs of cards completely designed in SVG.				--><!--	Copyright (C) 2005 David Bellot						--><!--	This library is free software; you can redistribute it and/or		--><!--	modify it under the terms of the GNU Lesser General Public		--><!--	License as published by the Free Software Foundation; either		--><!--	version 2 of the License, or (at your option) any later version		--><!--	This library is distributed in the hope that it will be useful,		--><!--	but WITHOUT ANY WARRANTY; without even the implied warranty of		--><!--	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU	--><!--	Lesser General Public License for more details.				--><!--	You should have received a copy of the GNU Lesser General Public	--><!--	License along with this library; if not, write to the Free Software	--><!--	Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA--><!--	Contact the author David Bellot at david.bellot@free.fr			-->
+<defs> 	
+    <g
+       id="n"
+       aria-label="A"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#e6180a;fill-opacity:1;stroke:none"
+       transform="matrix(0.50468926,0,0,0.79640336,-18.737563,-49.081114)">
+      <path
+         d="m 42.365189,-188.04546 v -3.38737 h 3.415365 l 15.733072,-38.40885 h 6.690755 l 15.761068,38.40885 h 3.97526 v 3.38737 H 68.37235 v -3.38737 h 4.087239 l -3.443359,-8.53841 H 53.311152 l -3.499348,8.53841 h 4.983072 v 3.38737 z m 12.317708,-15.31315 h 12.961588 l -6.438802,-15.98502 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:57.33333206px;font-family:'Bitstream Vera Serif';-inkscape-font-specification:'Bitstream Vera Serif Bold';text-align:center;text-anchor:middle"/>
+    </g>
+ 	<g id="base"> 
+     <path style="fill:#FFFFFF;stroke:#000000;stroke-width:2.5" d="M 0,0C0,3.78 3.09,6.87 6.87,6.87L159.715,6.87C163.485,6.87 166.575,3.78 166.575,0L166.575,-228.4C166.575,-232.18 163.485,-235.27 159.715,-235.27L6.87,-235.27C3.09,-235.27 0,-232.18 0,-228.4L0,0 z"/>
+     </g>
+  <g id="figure" > 
+    <path style="fill:#E6180A;" d="M-7.67,3.93c0.01-4.71,5.91-8.14,7.64-11.87c1.75,3.72,7.66,7.12,7.7,11.83c0.01,2.22-1.71,4.03-3.82,4.03C1.73,7.92,0,6.13,0,3.91c0,2.23-1.71,4.03-3.82,4.03C-5.94,7.95-7.66,6.15-7.67,3.93z"/>
+ </g>
+  </defs>
+   <g x="0" y="0"> 
+    <g> 
+        <use xlink:href="#base" x="0" y="0"/>
+        <use xlink:href="#n" x="0" y="0"/>
+        <use xlink:href="#n" x="318" y="210" transform="rotate(180,163.575,-30.28)"/>
+        <use xlink:href="#figure" x="13.65" y="-185.117" transform="rotate(180,13.65,-185.117)"/> 
+        <use xlink:href="#figure" x="153.925" y="-44.28"/> 
+
+        <use xlink:href="#figure" x="33" y="-50.6536" transform="scale(2.4) rotate(180,34,-50.6536)"/>
+        <use xlink:href="#laurel" transform="matrix(8.75e-2,0,0,8.75e-2,44.623,-159.8)"/>
+    </g>  
+ </g>
+ </svg> 
+
+ <!--167.575-->
+
+
+
+
+
+
+
+
+
+ 
+ 

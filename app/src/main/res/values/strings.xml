@@ -1,16 +1,18 @@
 <resources>
-    <string name="app_name">Who Knows</string>
+    <string name="app_name" translatable="false">Who Knows</string>
 
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
     <string name="settings">Settings</string>
+    <string name="exit">Exit</string>
 
+    <string name="exit_sure">Are you sure you want to exit the game?</string>
 
-    <string name="normal_game">Normal Game</string>
-    <string name="accumulative_game">Accumulative Game</string>
-    <string name="inverse_game">Inverse Game</string>
-    <string name="inverse_accumulative_game">Inverse Accumulative Game</string>
-
+    <string name="normal_game">Normal</string>
+    <string name="accumulative_game">Accumulative</string>
+    <string name="inverse_game">Inverse</string>
+    <string name="inverse_accumulative_game">Inverse Accumulative</string>
+    <string name="random_card">Random Card</string>
 
     <string name="remove_ads">Remove ads for 2 hours</string>
     <string name="language">Language</string>
@@ -20,25 +22,34 @@
         <item>Spanish</item>
     </string-array>
 
-    <string-array name="en_card_list">
-        <item>Picas</item>
-        <item>Corazores</item>
-        <item>Rombos</item>
-        <item>Tréboles</item>
+    <string-array name="languages_available_short" translatable="false">
+        <item>en</item>
+        <item>es</item>
     </string-array>
 
+    <string name="spade" translatable="false">\u2660</string>
+    <string name="heart" translatable="false">\u2665</string>
+    <string name="diamond" translatable="false">\u2666</string>
+    <string name="club" translatable="false">\u2663</string>
+
     <string name="question_pair_odd">Pair || Odd</string>
-    <string name="question_greater">Greater or Equal to %1$s || Smaller than %1$s</string>
-    <string name="question_smaller">Smaller or Equal to %1$s || Greater than %1$s</string>
-    <string name="question_equal">Same Number|| Different Number</string>
+    <string name="question_greater">Greater or Equal || Smaller</string>
+    <string name="question_smaller">Smaller or Equal || Greater</string>
+    <string name="question_equal">Same Number || Different Number</string>
+    <string name="question_same_suits">Same Suit || Different Suit</string>
     <string name="question_greater_num">Greater or Equal to %1$s || Smaller than %1$s</string>
     <string name="question_smaller_num">Smaller or Equal to %1$s || Greater than %1$s</string>
     <string name="question_equal_num">Equal to %1$s || Not Equal to %1$s</string>
-    <string name="question_multiple">Multiple of %1$s || Not Multiple of %1$s</string>
-    <string name="question_divisible">Divisible by %1$s || Not Divisible by %1$s</string>
     <string name="question_court">Court Card || Not Court Card</string>
-    <string name="question_two_suits">%1$s or %2$s</string>
+    <string name="question_two_suits">%1$s or %2$s || %3$s or %4$s</string>
     <string name="question_four_suits">%1$s, %2$s or %3$s || %4$s</string>
+
+    <string name="shots">Shots: %1$d</string>
+    <string name="drink_1_shot">Drink 1 shot</string>
+    <string name="drink_x_shots">Drink %1$d shots</string>
+    <string name="replay">Replay</string>
+    <string name="next">Next</string>
+    <string name="back_to_menu">Go back to menu</string>
 
     <string name="admods_id" translatable="false">ca-app-pub-4136978037886351~7509816013</string>
     <string name="admods_banner" translatable="false">ca-app-pub-4136978037886351/3925794222</string>

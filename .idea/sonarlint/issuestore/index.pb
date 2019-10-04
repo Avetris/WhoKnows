@@ -17,3 +17,11 @@ k
 ;app/src/main/java/com/avtdev/whoknows/Services/Constants.kt,4\7\47d35db005988fc823ef477be24c662fa353c7b8
 g
 7app/src/main/java/com/avtdev/whoknows/Model/Question.kt,c\9\c9ed48e59ef4d4517bf316bec6fb5f3a9abd361d
+q
+Aapp/src/main/java/com/avtdev/whoknows/Fragments/SettingsDialog.kt,0\4\0410c97d7c6359b566fab217a418d7e3f6de2d04
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+n
+>app/src/main/java/com/avtdev/whoknows/Services/LocaleHelper.kt,a\0\a0a0e46104b6ea6f7646ccdce77d64b98d4eee25
+h
+8app/src/main/java/com/avtdev/whoknows/MainApplication.kt,a\2\a23b4c00172f35146e711e340bbbc82dc65f6c1b

@@ -1,15 +1,24 @@
 package com.avtdev.whoknows.Fragments
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.ObjectAnimator
+import android.app.AlertDialog
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateDecelerateInterpolator
+import android.view.animation.DecelerateInterpolator
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.avtdev.whoknows.Listeners.IMainListener
-import com.avtdev.whoknows.Model.Card
 import com.avtdev.whoknows.Model.Question
 import com.avtdev.whoknows.R
 import com.avtdev.whoknows.Services.Constants
@@ -23,11 +32,16 @@ class GameFragment(
     private var listener: IMainListener? = null
     private var mGameFactory = GameFactory(mGameType)
 
+    private var accumulatorTextView: TextView? = null
     private var leftButton: Button? = null
     private var rightButton: Button? = null
     private var cardView: ImageView? = null
 
     private var currentQuestion: Question? = null
+
+    private var accumulative: Int = 0
+
+    private var onAnimation: Boolean = false
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -41,8 +55,8 @@ class GameFragment(
         super.onDetach()
         listener = null
     }
-    companion object {
 
+    companion object {
         @JvmStatic
         fun newInstance(gameType: Constants.Companion.GameType) : GameFragment{
             val gameFragment = GameFragment(gameType)
@@ -61,16 +75,111 @@ class GameFragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        accumulatorTextView = view.findViewById(R.id.tvAccumulator)
         leftButton = view.findViewById<Button>(R.id.btnLeft)
-        rightButton = view.findViewById<Button>(R.id.btnLeft)
+        rightButton = view.findViewById<Button>(R.id.btnRight)
         cardView = view.findViewById<ImageView>(R.id.ivCurrentCard)
 
+        leftButton?.setOnClickListener(this)
+        rightButton?.setOnClickListener(this)
+
+        if(mGameFactory.mGameType in listOf(Constants.Companion.GameType.INVERSE_ACCUMULATIVE, Constants.Companion.GameType.ACCUMULATIVE)){
+            accumulatorTextView?.visibility = View.VISIBLE
+        }else{
+            accumulatorTextView?.visibility = View.GONE
+            if(mGameFactory.mGameType  == Constants.Companion.GameType.RANDOM_CARD){
+                cardView?.setOnClickListener(this)
+                view.findViewById<LinearLayout>(R.id.llButtons).visibility = View.GONE
+            }
+        }
+
+        reset()
+    }
+
+    fun showButtons(){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            if(mGameFactory.mGameType in listOf(Constants.Companion.GameType.NORMAL, Constants.Companion.GameType.ACCUMULATIVE)){
+                leftButton?.setText(Html.fromHtml(currentQuestion?.question1, Html.FROM_HTML_MODE_LEGACY))
+                rightButton?.setText(Html.fromHtml(currentQuestion?.question2, Html.FROM_HTML_MODE_LEGACY))
+            }else{
+                leftButton?.setText(Html.fromHtml(currentQuestion?.question2, Html.FROM_HTML_MODE_LEGACY))
+                rightButton?.setText(Html.fromHtml(currentQuestion?.question1, Html.FROM_HTML_MODE_LEGACY))
+            }
+        }else{
+            if(mGameFactory.mGameType in listOf(Constants.Companion.GameType.NORMAL, Constants.Companion.GameType.ACCUMULATIVE)){
+                leftButton?.setText(Html.fromHtml(currentQuestion?.question1))
+                rightButton?.setText(Html.fromHtml(currentQuestion?.question2))
+            }else{
+                leftButton?.setText(Html.fromHtml(currentQuestion?.question2))
+                rightButton?.setText(Html.fromHtml(currentQuestion?.question1))
+            }
+        }
+    }
+
+    fun reset(){
+        accumulative = 0
         cardView?.setImageResource(R.drawable.back)
+        currentQuestion = null
+        nextCard()
+    }
+
+    fun nextCard(){
+        accumulative++
+        currentQuestion = mGameFactory.nextQuestion(context!!, currentQuestion?.card)
+        showButtons()
+        accumulatorTextView?.setText(String.format(context?.getString(R.string.shots)!!, accumulative))
     }
 
     fun showCard(){
         val drawableResourceId = context?.resources?.getIdentifier(currentQuestion?.card?.path, "drawable", context?.getPackageName())
-        cardView?.setImageResource(drawableResourceId!!)
+
+        val oa1 = ObjectAnimator.ofFloat(cardView!!, "scaleX", 1f, 0f)
+        val oa2 = ObjectAnimator.ofFloat(cardView!!, "scaleX", 0f, 1f)
+        oa1.interpolator = DecelerateInterpolator()
+        oa2.interpolator = AccelerateDecelerateInterpolator()
+        oa1.addListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationStart(animation: Animator?) {
+                super.onAnimationStart(animation)
+                onAnimation = true
+            }
+            override fun onAnimationEnd(animation: Animator) {
+                super.onAnimationEnd(animation)
+                cardView?.setImageResource(drawableResourceId!!)
+                oa2.start()
+            }
+        })
+        oa2.addListener(object : AnimatorListenerAdapter(){
+            override fun onAnimationEnd(animation: Animator?) {
+                super.onAnimationEnd(animation)
+                onAnimation = false
+            }
+        })
+        oa1.start()
+    }
+
+    fun showDialog(){
+        val message: String?
+        if(mGameFactory.mGameType in listOf(Constants.Companion.GameType.ACCUMULATIVE, Constants.Companion.GameType.INVERSE_ACCUMULATIVE)){
+            if(accumulative > 1){
+                message = String.format(context?.getString(R.string.drink_x_shots)!!, accumulative)
+            }else{
+                message = context?.getString(R.string.drink_1_shot)!!
+            }
+        }else{
+            message = context?.getString(R.string.drink_1_shot)!!
+        }
+        AlertDialog.Builder(context)
+        .setMessage(message)
+        .setPositiveButton(R.string.replay){ _, _ ->
+            listener?.showInterstitialAd()
+            reset()
+        }
+        .setNegativeButton(R.string.back_to_menu){ _, _ ->
+            listener?.showInterstitialAd()
+            listener?.changeFragment(MenuFragment.newInstance())
+        }
+        .setCancelable(false)
+        .show()
     }
 
     fun validateCard(leftButton: Boolean){
@@ -79,19 +188,24 @@ class GameFragment(
             else !leftButton
         )
         showCard()
-        if(correct!!){
-
+        if(!correct!!){
+            showDialog()
         }else{
-
+            nextCard()
         }
-
     }
 
-
     override fun onClick(v: View?) {
-        when(v?.id){
-            R.id.btnLeft -> validateCard(true)
-            R.id.btnRight -> validateCard(false)
+        if(!onAnimation){
+            when(v?.id){
+                R.id.btnLeft -> validateCard(true)
+                R.id.btnRight -> validateCard(false)
+                R.id.ivCurrentCard -> {
+                    showCard()
+                    nextCard()
+                    listener?.showInterstitialAd()
+                }
+            }
         }
     }
 }

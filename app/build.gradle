@@ -26,7 +26,13 @@ android {
             buildConfigField "boolean", "ADS", "true"
         }
     }
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
 }
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
