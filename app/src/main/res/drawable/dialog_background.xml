@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <inset
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:drawable="@android:color/white"
-    android:insetTop="10dp"
+    android:drawable="@color/colorPrimaryDark"
+    android:insetTop="15dp"
     android:insetRight="10dp"
     android:insetLeft="10dp"
-    android:insetBottom="10dp">
+    android:insetBottom="15dp">
 </inset>

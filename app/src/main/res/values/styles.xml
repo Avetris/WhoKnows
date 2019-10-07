@@ -13,6 +13,18 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="CustomDialogTheme" parent="android:Theme.Material.Dialog.Alert">
+        <item name="android:windowBackground">@color/colorPrimaryDark</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
     <style name="MenuButton" parent="AppTheme">
         <item name="android:layout_width">match_parent</item>
         <item name="android:background">@drawable/button</item>

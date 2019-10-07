@@ -7,12 +7,29 @@
 
     <ImageButton
         android:id="@+id/btnSettigns"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:src="@drawable/ic_settings"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
         android:background="@color/colorPrimary"
         android:tint="@color/colorPrimaryDark"
+        android:layout_margin="5dp"
         android:layout_alignParentEnd="true"/>
+
+    <Button
+        android:id="@+id/btnHelp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/question_button"
+        android:text="@string/question"
+        android:textSize="20sp"
+        android:textColor="@color/colorAccent"
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:tint="@color/colorPrimaryDark"
+        android:layout_margin="5dp"
+        android:layout_alignParentStart="true"/>
 
     <TextView
         android:id="@+id/tvTitle"

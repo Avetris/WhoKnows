@@ -25,14 +25,14 @@ class SettingsDialog(context: Context) : Dialog(context) {
     var mRewardedAd: RewardedAd = createRewardedAdd(true)
 
     fun showDialog() {
-        val builder = AlertDialog.Builder(activity)
+        val builder = AlertDialog.Builder(activity, R.style.CustomDialogTheme)
 
         val inflater = this.layoutInflater
         val dialogView = inflater.inflate(R.layout.dialog_settings, null)
 
         val languageSpinner = dialogView.findViewById<Spinner> (R.id.spLanguageSpinner)
 
-        val adapter = ArrayAdapter<String>(activity, android.R.layout.simple_spinner_item,
+        val adapter = ArrayAdapter<String>(activity, R.layout.spinner_item,
             activity.getResources().getStringArray(R.array.languages_available))
 
         val shorts_lan = activity.getResources().getStringArray(R.array.languages_available_short)
@@ -60,7 +60,6 @@ class SettingsDialog(context: Context) : Dialog(context) {
         .setNegativeButton(R.string.cancel){ dialog, _ ->
             dialog.dismiss()
         }
-
         builder.setView(dialogView);
         builder.show()
     }

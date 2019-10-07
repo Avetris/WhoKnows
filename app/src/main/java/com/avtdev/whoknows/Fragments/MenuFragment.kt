@@ -51,6 +51,7 @@ class MenuFragment : Fragment(), View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<ImageButton>(R.id.btnSettigns).setOnClickListener(this)
+        view.findViewById<Button>(R.id.btnHelp).setOnClickListener(this)
         view.findViewById<Button>(R.id.btnNormalGame).setOnClickListener(this)
         view.findViewById<Button>(R.id.btnAccumulativeGame).setOnClickListener(this)
         view.findViewById<Button>(R.id.btnInverseGame).setOnClickListener(this)
@@ -59,13 +60,18 @@ class MenuFragment : Fragment(), View.OnClickListener {
     }
 
     override fun onClick(p0: View?) {
-        when (p0?.id){
+        when (p0?.id) {
             R.id.btnSettigns -> activity?.let { SettingsDialog(it).showDialog() }
             R.id.btnNormalGame -> listener?.changeFragment(GameFragment.newInstance(Constants.Companion.GameType.NORMAL))
             R.id.btnAccumulativeGame -> listener?.changeFragment(GameFragment.newInstance(Constants.Companion.GameType.ACCUMULATIVE))
             R.id.btnInverseGame -> listener?.changeFragment(GameFragment.newInstance(Constants.Companion.GameType.INVERSE))
-            R.id.btnInverseAccumulativeGame -> listener?.changeFragment(GameFragment.newInstance(Constants.Companion.GameType.INVERSE_ACCUMULATIVE))
+            R.id.btnInverseAccumulativeGame -> listener?.changeFragment(
+                GameFragment.newInstance(
+                    Constants.Companion.GameType.INVERSE_ACCUMULATIVE
+                )
+            )
             R.id.btnRandomCard -> listener?.changeFragment(GameFragment.newInstance(Constants.Companion.GameType.RANDOM_CARD))
+            R.id.btnHelp -> activity?.let { HelpDialog(it).showDialog() }
         }
     }
 }
