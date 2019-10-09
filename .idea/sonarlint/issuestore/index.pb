@@ -25,3 +25,7 @@ n
 >app/src/main/java/com/avtdev/whoknows/Services/LocaleHelper.kt,a\0\a0a0e46104b6ea6f7646ccdce77d64b98d4eee25
 h
 8app/src/main/java/com/avtdev/whoknows/MainApplication.kt,a\2\a23b4c00172f35146e711e340bbbc82dc65f6c1b
+m
+=app/src/main/java/com/avtdev/whoknows/Fragments/HelpDialog.kt,0\e\0e6d770e6aa206cc125fc3968b4cbff00ea4a68f
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35

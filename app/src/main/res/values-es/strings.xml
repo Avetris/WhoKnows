@@ -3,16 +3,19 @@
     <string name="accumulative_game">Acumulativo</string>
     <string name="back_to_menu">Volver al menú</string>
     <string name="cancel">Cancelar</string>
-    <string name="drink_1_shot">Beber un trago</string>
-    <string name="drink_x_shots">Beber %1$d tragos</string>
+    <string name="help">Ayuda</string>
+    <string name="close">Cerrar</string>
+    <string name="drink_1_shot">Bebes un trago</string>
+    <string name="drink_x_shots">Bebes %1$d tragos</string>
     <string name="exit">Salir</string>
+    <string name="exit_game">¿Estás seguro que quieres volver al menú?</string>
     <string name="exit_sure">¿Estás seguro que quieres abandonar el juego?</string>
     <string name="inverse_accumulative_game">Inverso Acumulativo</string>
     <string name="inverse_game">Inverso</string>
     <string name="language">Idioma</string>
     <string name="next">Siguiente</string>
     <string name="normal_game">Normal</string>
-    <string name="replay">Volver a jugar</string>
+    <string name="replay">Repetir</string>
     <string name="save">Guardar</string>
     <string name="settings">Opciones</string>
     <string name="shots">Tragos: %1$d</string>
@@ -29,6 +32,17 @@
     <string name="question_equal_num">Igual a %1$s || Distinto de %1$s</string>
     <string name="question_equal">Mismo Número || Número Diferente</string>
     <string name="question_court">Figura || No Figura</string>
+
+    <string name="black">Negro</string>
+    <string name="red">Rojo</string>
+
+    <string name="help_explanation">Intenta adivinar el valor de la siguiente carta seleccionando entre las opciones que tiene debajo. En algunos casos (cuando no tienes ningún valor con el que comparar en los botones), tendrás que adivinar según el valor de la carta actual.</string>
+    <string name="help_games_mode">Cuatro modos de juego diferentes:</string>
+    <string name="help_normal">\u2022 Normal: Adivina la carta. Si fallas, bebes 1 trago.</string>
+    <string name="help_accumulative">\u2022 Acumulativo: Adivina la carta. Si fallas, bebes tantos tragos como aciertos haya habido desde el último fallo.</string>
+    <string name="help_inverse">\u2022 Inverso: Mismo modo de juego que el normal, pero a la inversa. Ahora, ¡debes adivinar el valor incorrecto!</string>
+    <string name="help_inverse_accumulative">\u2022 Acumulativo Inverso: Mismo modo de juego que el acumulativo, pero a la inversa. Ahora, ¡debes adivinar el valor incorrecto!</string>
+    <string name="help_random_card">\u2022 Carta Aleatoria: Haz click para ver una carta aleatoria para jugar a otros juegos.</string>
 
     <string-array name="languages_available">
         <item>Inglés</item>

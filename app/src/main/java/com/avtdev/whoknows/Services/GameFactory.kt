@@ -8,6 +8,7 @@ import com.avtdev.whoknows.Model.Card
 import com.avtdev.whoknows.Model.Question
 import com.avtdev.whoknows.R
 import com.avtdev.whoknows.Services.Constants.Companion.ALL_QUESTIONS
+import com.avtdev.whoknows.Services.Constants.Companion.COLOURS
 import com.avtdev.whoknows.Services.Constants.Companion.COURTS
 import com.avtdev.whoknows.Services.Constants.Companion.QUESTION
 import com.avtdev.whoknows.Services.Constants.Companion.SUITS
@@ -21,11 +22,12 @@ class GameFactory (
     init {
         mCardList.clear()
         for(suit in SUITS){
+            val colour = if(suit in listOf("club", "spade")) COLOURS[0] else COLOURS[1]
             for(i in 1..13){
                 if(i <= 10){
-                    mCardList.add(Card(path = "${suit}_${i}", cardValue = i, suit = suit))
+                    mCardList.add(Card(path = "${suit}_${i}", cardValue = i, suit = suit, colour = colour))
                 }else{
-                    mCardList.add(Card(path = "${suit}_${COURTS[i - 11]}", cardValue = i, isCourt = true, suit = suit))
+                    mCardList.add(Card(path = "${suit}_${COURTS[i - 11]}", cardValue = i, isCourt = true, suit = suit, colour = colour))
                 }
             }
         }
@@ -111,32 +113,23 @@ class GameFactory (
             }
             R.string.question_four_suits -> {
                 val suits = getSuits(context)
-                leftCorrect = false
 
                 val s1 = suits.random()
                 if(suits.indexOf(s1) == SUITS.indexOf(nextCard.suit)){
+                    leftCorrect = false
+                }else{
                     leftCorrect = true
                 }
                 suits.remove(s1)
-                val s2 = suits.random()
-                if(suits.indexOf(s2) == SUITS.indexOf(nextCard.suit)){
-                    leftCorrect = true
-                }
-                suits.remove(s2)
-                val s3 = suits.random()
-                if(suits.indexOf(s3) == SUITS.indexOf(nextCard.suit)){
-                    leftCorrect = true
-                }
-                suits.remove(s3)
 
-                fullQuestion = String.format(context.getString(questionId), s1, s2, s3, suits.get(0))
+                fullQuestion = String.format(context.getString(questionId), suits.get(0), suits.get(1), suits.get(2), s1)
             }
             R.string.question_greater -> {
                 if(card?.cardValue!! < 13){
                     fullQuestion = context.getString(questionId)
                     leftCorrect = nextCard.cardValue > card.cardValue
                 }else{
-                    fullQuestion = context.getString(questionId)
+                    fullQuestion = context.getString(R.string.question_smaller)
                     leftCorrect = nextCard.cardValue < card.cardValue
                 }
             }
@@ -145,7 +138,7 @@ class GameFactory (
                     fullQuestion = context.getString(questionId)
                     leftCorrect = nextCard.cardValue < card.cardValue
                 }else{
-                    fullQuestion = context.getString(questionId)
+                    fullQuestion = context.getString(R.string.question_greater)
                     leftCorrect = nextCard.cardValue > card.cardValue
                 }
             }
@@ -157,6 +150,13 @@ class GameFactory (
                 fullQuestion = context.getString(questionId)
                 leftCorrect = nextCard.suit == card?.suit
             }
+            R.string.question_color -> {
+                fullQuestion = context.getString(
+                    questionId,
+                    "<span style='color:black'>${context.getString(R.string.black)}</span>",
+                    "<span style='color:red'>${context.getString(R.string.red)}</span>")
+                leftCorrect = nextCard.colour == COLOURS[0]
+            }
         }
 
         return Question(
@@ -165,6 +165,7 @@ class GameFactory (
             card = nextCard
         )
     }
+
     private fun getSuits(context: Context): ArrayList<CharSequence> {
         val suits = ArrayList<CharSequence>()
         val packageName = context.packageName

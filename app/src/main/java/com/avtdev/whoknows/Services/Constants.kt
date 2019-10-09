@@ -20,6 +20,7 @@ class Constants {
         }
 
         val SUITS = listOf("club", "heart", "diamond", "spade")
+        val COLOURS = listOf("black", "red")
         val COURTS = listOf("jack", "queen", "king")
         val QUESTION: List<Int> = listOf(
             R.string.question_pair_odd,
@@ -28,7 +29,8 @@ class Constants {
             R.string.question_equal_num,
             R.string.question_court,
             R.string.question_two_suits,
-            R.string.question_four_suits
+            R.string.question_four_suits,
+            R.string.question_color
         )
         val ALL_QUESTIONS: List<Int> = QUESTION + listOf(
             R.string.question_greater,

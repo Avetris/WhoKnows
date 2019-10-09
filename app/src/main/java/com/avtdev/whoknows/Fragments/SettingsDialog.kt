@@ -55,6 +55,8 @@ class SettingsDialog(context: Context) : Dialog(context) {
             LocaleHelper.setLocale(activity, lan)
             activity.recreate()
 
+            activity.removeSettingsDialog()
+
             dialog.dismiss()
         }
         .setNegativeButton(R.string.cancel){ dialog, _ ->
@@ -80,8 +82,12 @@ class SettingsDialog(context: Context) : Dialog(context) {
     }
 
     fun createRewardedAdd(firstLoad: Boolean): RewardedAd{
-        val rewardedAd = RewardedAd(activity, if(BuildConfig.ADS) activity.getString(R.string.admods_rewarded) else "ca-app-pub-3940256099942544/5224354917")
-        if(!firstLoad) {
+        if(firstLoad) {
+            mRewardedAd = RewardedAd(
+                activity,
+                activity.getString(R.string.admods_rewarded)
+            )
+        }else{
             val adLoadCallback = object : RewardedAdLoadCallback() {
                 override fun onRewardedAdLoaded() {
                     enableAdsButton(true)
@@ -89,11 +95,12 @@ class SettingsDialog(context: Context) : Dialog(context) {
 
                 override fun onRewardedAdFailedToLoad(errorCode: Int) {
                     enableAdsButton(false)
+                    createRewardedAdd(false)
                 }
             }
-            rewardedAd.loadAd(AdRequest.Builder().build(), adLoadCallback)
+            mRewardedAd.loadAd(AdRequest.Builder().build(), adLoadCallback)
         }
-        return rewardedAd
+        return mRewardedAd
     }
 
     fun enableAdsButton(enable: Boolean){
@@ -114,7 +121,8 @@ class SettingsDialog(context: Context) : Dialog(context) {
                     enableAdsButton(false)
                     val adCallback = object : RewardedAdCallback(){
                         override fun onUserEarnedReward(reward: RewardItem) {
-                            setRemoveAds(reward.amount)
+                            val value = if(reward.amount < 1000) 7200 else reward.amount
+                            setRemoveAds(value)
                             activity.adsTimer()
                         }
 
@@ -126,13 +134,15 @@ class SettingsDialog(context: Context) : Dialog(context) {
                 }
             }
             removeAds?.setText(R.string.remove_ads)
+        }else{
+            activity.adsTimer()
         }
     }
 
     private fun setRemoveAds(time: Int) {
         val cal = Calendar.getInstance()
         cal.add(Calendar.SECOND, time)
-        activity.setPreferences(Constants.Companion.Preferences.ADS_TIME.name, activity.getUTCDate())
-        activity.setPreferences(Constants.Companion.Preferences.ADS_TIME.name, cal.timeInMillis)
+        activity.setPreferences(Constants.Companion.Preferences.LAST_DATE.name, activity.getUTCDate())
+        activity.setPreferences(Constants.Companion.Preferences.ADS_TIME.name, activity.getUTCDate(cal.time))
     }
 }

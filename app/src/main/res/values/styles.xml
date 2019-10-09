@@ -42,7 +42,7 @@
     <style name="GameButton" parent="AppTheme">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_weight">1</item>
+        <item name="android:layout_weight">0.5</item>
         <item name="android:background">@drawable/button</item>
         <item name="drawableTint">@color/colorPrimaryDark</item>
         <item name="android:textColor">@color/colorAccent</item>

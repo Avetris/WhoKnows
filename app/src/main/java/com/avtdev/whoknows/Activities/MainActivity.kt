@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.ContextThemeWrapper
@@ -51,6 +52,15 @@ class MainActivity : AppCompatActivity(), IMainListener {
         super.applyOverrideConfiguration(overrideConfiguration)
     }
 
+    override fun showSettingsDialog(){
+        settingsDialog = SettingsDialog(this)
+        settingsDialog?.showDialog()
+    }
+
+    fun removeSettingsDialog(){
+        settingsDialog = null
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -62,12 +72,7 @@ class MainActivity : AppCompatActivity(), IMainListener {
 
         mInterstitialAd = InterstitialAd(this);
 
-        if(BuildConfig.ADS) {
-            mAdView?.setAdUnitId(getString(R.string.admods_banner))
-            mInterstitialAd?.adUnitId = getString(R.string.admods_intersticial)
-        }else{
-            mInterstitialAd?.adUnitId = "ca-app-pub-3940256099942544/1033173712"
-        }
+        mInterstitialAd?.adUnitId = getString(R.string.admods_intersticial)
         mInterstitialAd?.loadAd(AdRequest.Builder().build())
         mInterstitialAd?.adListener = object : AdListener() {
             override fun onAdClosed() {
@@ -82,7 +87,7 @@ class MainActivity : AppCompatActivity(), IMainListener {
 
         if(timeLast > 0){
             timer?.cancel()
-            timer = object: CountDownTimer(20000, 1000) {
+            timer = object: CountDownTimer(timeLast, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
                     settingsDialog?.changeTime(millisUntilFinished)
                 }
@@ -93,9 +98,8 @@ class MainActivity : AppCompatActivity(), IMainListener {
                 }
             }
             timer?.start()
-        }else{
-            showBammerAds()
         }
+        showBammerAds()
     }
 
     fun showBammerAds(){
@@ -103,6 +107,9 @@ class MainActivity : AppCompatActivity(), IMainListener {
             if (mAdRequest == null)
                 mAdRequest = AdRequest.Builder().build()
             mAdView?.loadAd(mAdRequest)
+            mAdView?.visibility = View.VISIBLE
+        }else{
+            mAdView?.visibility = View.GONE
         }
     }
 
@@ -128,25 +135,38 @@ class MainActivity : AppCompatActivity(), IMainListener {
         return adsTime == 0L
     }
 
-    fun getUTCDate(): Long {
+    fun getUTCDate(date: Date = Date()): Long {
         val pattern = "yyyyMMddHHmmss"
-        val date = Date()
         val simpleDateFormat = SimpleDateFormat(pattern)
         simpleDateFormat.timeZone = TimeZone.getTimeZone("UTC")
         return java.lang.Long.parseLong(simpleDateFormat.format(date))
     }
 
+    fun getDifferenceDates(currentDate: Long = getUTCDate(), date2: Long): Long {
+        try {
+            val pattern = "yyyyMMddHHmmss"
+            val simpleDateFormat = SimpleDateFormat(pattern)
+            simpleDateFormat.timeZone = TimeZone.getTimeZone("UTC")
+            val d1 = simpleDateFormat.parse(currentDate.toString())!!.time
+            val d2 = simpleDateFormat.parse(date2.toString())!!.time
+            return d2 - d1
+        } catch (e: Exception) {
+           // Logger.e(TAG, "getDifferenceDates", e)
+        }
+
+        return 0
+    }
+
     fun getAdsTime(): Long{
         val sharedPreferences = getSharedPreferences(Constants.Companion.Preferences.NAME.name, Context.MODE_PRIVATE)
         val lastDate = sharedPreferences.getLong(Constants.Companion.Preferences.LAST_DATE.name, 0L)
-        val currentDate = getUTCDate()
 
         // Avoid time changing
-        if(lastDate != 0L && lastDate - currentDate < 0){
+        if(lastDate != 0L && getDifferenceDates(date2 = lastDate) >= 0){
             return 0L
         }
 
-        val time = sharedPreferences.getLong(Constants.Companion.Preferences.ADS_TIME.name, 0L) - currentDate
+        val time = getDifferenceDates(date2 = sharedPreferences.getLong(Constants.Companion.Preferences.ADS_TIME.name, 0L))
         if(time <= 0){
             return 0L
         }

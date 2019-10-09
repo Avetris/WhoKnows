@@ -23,6 +23,7 @@ import com.avtdev.whoknows.Model.Question
 import com.avtdev.whoknows.R
 import com.avtdev.whoknows.Services.Constants
 import com.avtdev.whoknows.Services.GameFactory
+import org.w3c.dom.Text
 
 
 class GameFragment(
@@ -98,21 +99,11 @@ class GameFragment(
 
     fun showButtons(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            if(mGameFactory.mGameType in listOf(Constants.Companion.GameType.NORMAL, Constants.Companion.GameType.ACCUMULATIVE)){
-                leftButton?.setText(Html.fromHtml(currentQuestion?.question1, Html.FROM_HTML_MODE_LEGACY))
-                rightButton?.setText(Html.fromHtml(currentQuestion?.question2, Html.FROM_HTML_MODE_LEGACY))
-            }else{
-                leftButton?.setText(Html.fromHtml(currentQuestion?.question2, Html.FROM_HTML_MODE_LEGACY))
-                rightButton?.setText(Html.fromHtml(currentQuestion?.question1, Html.FROM_HTML_MODE_LEGACY))
-            }
+            leftButton?.setText(Html.fromHtml(currentQuestion?.question1, Html.FROM_HTML_MODE_LEGACY))
+            rightButton?.setText(Html.fromHtml(currentQuestion?.question2, Html.FROM_HTML_MODE_LEGACY))
         }else{
-            if(mGameFactory.mGameType in listOf(Constants.Companion.GameType.NORMAL, Constants.Companion.GameType.ACCUMULATIVE)){
-                leftButton?.setText(Html.fromHtml(currentQuestion?.question1))
-                rightButton?.setText(Html.fromHtml(currentQuestion?.question2))
-            }else{
-                leftButton?.setText(Html.fromHtml(currentQuestion?.question2))
-                rightButton?.setText(Html.fromHtml(currentQuestion?.question1))
-            }
+            leftButton?.setText(Html.fromHtml(currentQuestion?.question1))
+            rightButton?.setText(Html.fromHtml(currentQuestion?.question2))
         }
     }
 
@@ -168,8 +159,14 @@ class GameFragment(
         }else{
             message = context?.getString(R.string.drink_1_shot)!!
         }
-        AlertDialog.Builder(context)
-        .setMessage(message)
+
+
+        val inflater = this.layoutInflater
+        val dialogView = inflater.inflate(R.layout.dialog_game, null)
+        dialogView.findViewById<TextView>(R.id.message).setText(message)
+
+        AlertDialog.Builder(context, R.style.CustomDialogTheme)
+        .setView(dialogView)
         .setPositiveButton(R.string.replay){ _, _ ->
             listener?.showInterstitialAd()
             reset()

@@ -9,6 +9,7 @@
     <string name="close">Close</string>
     <string name="exit">Exit</string>
 
+    <string name="exit_game">Are you sure you want to go back to the menu?</string>
     <string name="exit_sure">Are you sure you want to exit the game?</string>
 
     <string name="normal_game">Normal</string>
@@ -46,6 +47,10 @@
     <string name="question_court">Court Card || Not Court Card</string>
     <string name="question_two_suits">%1$s or %2$s || %3$s or %4$s</string>
     <string name="question_four_suits">%1$s, %2$s or %3$s || %4$s</string>
+    <string name="question_color" translatable="false">%1$s || %2$s</string>
+
+    <string name="black">Black</string>
+    <string name="red">Red</string>
 
     <string name="shots">Shots: %1$d</string>
     <string name="drink_1_shot">Drink 1 shot</string>
@@ -54,7 +59,7 @@
     <string name="next">Next</string>
     <string name="back_to_menu">Go back to menu</string>
 
-    <string name="help_explanation">Try to guess the value of the next card choosing one of the options below. In some cases (when you do not have any value to compare with in the buttons), you have to guess based on the value of the last card.</string>
+    <string name="help_explanation">Try to guess the value of the next card choosing one of the options below. In some cases (when you do not have any value to compare inside the buttons), you have to guess based on the value of the last card.</string>
     <string name="help_games_mode">Four different games mode:</string>
     <string name="help_normal">\u2022 Normal: Guess the next card. If you fail, you drink 1 shot.</string>
     <string name="help_accumulative">\u2022 Accumulative: Guess the next card. If you fail, you drink as many shots as the number of correct answer since the last failure.</string>
@@ -63,7 +68,7 @@
     <string name="help_random_card">\u2022 Random Card: Click to show a random card to play another game.</string>
 
     <string name="admods_id" translatable="false">ca-app-pub-4136978037886351~7509816013</string>
-    <string name="admods_banner" translatable="false">ca-app-pub-4136978037886351/3925794222</string>
+    <!--<string name="admods_banner" translatable="false">ca-app-pub-4136978037886351/3925794222</string>
     <string name="admods_intersticial" translatable="false">ca-app-pub-4136978037886351/3359173234</string>
-    <string name="admods_rewarded" translatable="false">ca-app-pub-4136978037886351/3686476292</string>
+    <string name="admods_rewarded" translatable="false">ca-app-pub-4136978037886351/3686476292</string>-->
 </resources>
